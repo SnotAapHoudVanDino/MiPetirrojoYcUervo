@@ -1,7 +1,7 @@
 /* Algemene stijl voor het hele lichaam */
 body {
-    font-family: "Courier New", monospace; /* Oud typemachine lettertype */
-    background: linear-gradient(to right, #ff4d6d, #ff758f); /* Rood-roze gradient achtergrond */
+    font-family: "Courier New", monospace;
+    background: linear-gradient(to right, #ff4d6d, #ff758f);
     color: white;
     text-align: center;
     padding: 20px;
@@ -20,17 +20,17 @@ body {
 
 /* Stijl voor knoppen */
 button {
-    background-color: #ff4d6d; /* Rood voor knoppen */
-    border: 2px solid white; /* Witte rand voor de knoppen */
-    padding: 12px 25px; /* Grote knoppen */
-    font-size: 18px; /* Grotere tekst voor knoppen */
+    background-color: #ff4d6d;
+    border: 2px solid white;
+    padding: 12px 25px;
+    font-size: 18px;
     cursor: pointer;
     color: white;
-    transition: background-color 0.3s ease; /* Voor smooth hover effect */
+    transition: background-color 0.3s ease;
 }
 
 button:hover {
-    background-color: #ff1e45; /* Donkerder rood als je over de knop hovert */
+    background-color: #ff1e45;
 }
 
 /* Stijl voor textarea (dagboek tekst) */
@@ -38,12 +38,11 @@ textarea {
     width: 80%;
     height: 150px;
     margin-top: 20px;
-    background-color: #fff1f1; /* Lichte roze achtergrond voor het tekstvak */
-    border: 2px solid #ff4d6d; /* Rode rand om de textarea */
-    color: #333; /* Donkere tekstkleur voor leesbaarheid */
+    background-color: #fff1f1;
+    border: 2px solid #ff4d6d;
+    color: #333;
     padding: 10px;
     font-size: 16px;
-    font-family: "Courier New", monospace; /* Typemachine lettertype */
 }
 
 /* Stijl voor inputvelden en bestandsupload */
@@ -53,7 +52,6 @@ input[type="file"], input[type="password"] {
     padding: 10px;
     font-size: 16px;
     color: #333;
-    font-family: "Courier New", monospace;
 }
 
 input[type="file"] {
@@ -89,3 +87,4 @@ button {
 button:hover {
     background-color: #ff1e45;
 }
+
