@@ -70,3 +70,17 @@ function loadMedia() {
         });
     });
 }
+function uploadFile() {
+    const file = document.getElementById("fileUpload").files[0]; // Haalt het bestand op
+    if (file) {
+        const storageRef = storage.ref("uploads/" + file.name);  // Bestandsnaam is het pad in Firebase
+        storageRef.put(file).then(snapshot => {  // Uploaden naar Firebase Storage
+            snapshot.ref.getDownloadURL().then(url => {  // Haalt de download URL op
+                db.collection("media").add({
+                    url: url, 
+                    timestamp: firebase.firestore.FieldValue.serverTimestamp() 
+                });
+            });
+        });
+    }
+}
