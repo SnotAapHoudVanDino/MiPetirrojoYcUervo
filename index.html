@@ -27,7 +27,9 @@
 
         <div id="diarySection" class="hidden">
             <h2>Dagboek</h2>
+            <!-- Dagboek tekst invoeren -->
             <textarea id="diaryText" placeholder="Schrijf hier je gedachten..."></textarea>
+            <!-- Opslaan knop -->
             <button onclick="saveDiary()">Opslaan</button>
             <div id="savedDiary"></div>
         </div>
@@ -38,15 +40,19 @@
             <button onclick="showCategory('zomervakantie')">Zomervakantie</button>
             <button onclick="showCategory('kerstvakantie')">Kerstvakantie</button>
             <button onclick="showCategory('opreis')">Op Reis</button>
-            <input type="file" id="fileUpload" multiple>
-            <button onclick="uploadFile()">Upload</button>
+
+            <!-- Bestanden uploaden (foto/video) -->
+            <input type="file" id="fileUpload" multiple> <!-- Meerdere bestanden kunnen worden geüpload -->
+            <button onclick="uploadFile()">Uploaden</button>
+
             <div id="mediaContent"></div>
         </div>
     </div>
 
-    <!-- Verbind je JavaScript-bestand -->
-    <script src="js/script.js"></script>
+    <!-- Verbind je JavaScript-bestand (dit is waar je het script koppelt) -->
+    <script src="js/script.js"></script> <!-- Zorg ervoor dat dit goed is gekoppeld -->
 </body>
 </html>
+
 
 
