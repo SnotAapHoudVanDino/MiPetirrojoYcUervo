@@ -1,16 +1,52 @@
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-    apiKey: "AIzaSyAmBFtPf11eu4tohfj17CMkG8FbsVl93O8",
-    authDomain: "mijnroodborststje.firebaseapp.com",
-    projectId: "mijnroodborststje",
-    storageBucket: "mijnroodborststje.appspot.com",
-    messagingSenderId: "99812857188",
-    appId: "1:99812857188:web:f7b3dd2662dd70bca59671",
-    measurementId: "G-V1HHCF8Y93"
+  apiKey: "AIzaSyAmBFtPf11eu4tohfj17CMkG8FbsVl93O8",
+  authDomain: "mijnroodborststje.firebaseapp.com",
+  projectId: "mijnroodborststje",
+  storageBucket: "mijnroodborststje.firebasestorage.app",
+  messagingSenderId: "99812857188",
+  appId: "1:99812857188:web:f7b3dd2662dd70bca59671",
+  measurementId: "G-V1HHCF8Y93"
 };
 
-firebase.initializeApp(firebaseConfig);
-const db = firebase.firestore();
-const storage = firebase.storage();
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
+
+// Dagboek opslaan
+function saveDiary() {
+    const text = document.getElementById("diaryText").value; // Haalt de tekst op die de gebruiker heeft geschreven
+    if (text) {
+        db.collection("diary").add({
+            text: text, // De tekst van het dagboek
+            timestamp: firebase.firestore.FieldValue.serverTimestamp() // De tijd waarop het is opgeslagen
+        });
+        document.getElementById("diaryText").value = ""; // Leeg het tekstveld na het opslaan
+    }
+}
+// Uploaden van foto’s of video’s
+function uploadFile() {
+    const file = document.getElementById("fileUpload").files[0]; // Haalt het geselecteerde bestand op
+    if (file) {
+        const storageRef = storage.ref("uploads/" + file.name);  // Bestandsnaam + locatie in Firebase Storage
+        storageRef.put(file).then(snapshot => {  // Bestanden uploaden naar Firebase Storage
+            snapshot.ref.getDownloadURL().then(url => {  // Haalt de URL van het bestand op na upload
+                // Sla de URL van het bestand op in Firestore
+                db.collection("media").add({
+                    url: url, 
+                    timestamp: firebase.firestore.FieldValue.serverTimestamp() // De tijd waarop het bestand werd geüpload
+                });
+            });
+        });
+    }
+}
 
 function checkCode() {
     const code = document.getElementById("codeInput").value;
