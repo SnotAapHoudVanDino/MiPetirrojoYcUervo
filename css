@@ -1,0 +1,91 @@
+/* Algemene stijl voor het hele lichaam */
+body {
+    font-family: "Courier New", monospace; /* Oud typemachine lettertype */
+    background: linear-gradient(to right, #ff4d6d, #ff758f); /* Rood-roze gradient achtergrond */
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin: 0;
+}
+
+/* Verbergen van elementen */
+.hidden {
+    display: none;
+}
+
+/* Stijl voor de container */
+.container {
+    margin-top: 50px;
+}
+
+/* Stijl voor knoppen */
+button {
+    background-color: #ff4d6d; /* Rood voor knoppen */
+    border: 2px solid white; /* Witte rand voor de knoppen */
+    padding: 12px 25px; /* Grote knoppen */
+    font-size: 18px; /* Grotere tekst voor knoppen */
+    cursor: pointer;
+    color: white;
+    transition: background-color 0.3s ease; /* Voor smooth hover effect */
+}
+
+button:hover {
+    background-color: #ff1e45; /* Donkerder rood als je over de knop hovert */
+}
+
+/* Stijl voor textarea (dagboek tekst) */
+textarea {
+    width: 80%;
+    height: 150px;
+    margin-top: 20px;
+    background-color: #fff1f1; /* Lichte roze achtergrond voor het tekstvak */
+    border: 2px solid #ff4d6d; /* Rode rand om de textarea */
+    color: #333; /* Donkere tekstkleur voor leesbaarheid */
+    padding: 10px;
+    font-size: 16px;
+    font-family: "Courier New", monospace; /* Typemachine lettertype */
+}
+
+/* Stijl voor inputvelden en bestandsupload */
+input[type="file"], input[type="password"] {
+    background-color: #fff1f1;
+    border: 2px solid #ff4d6d;
+    padding: 10px;
+    font-size: 16px;
+    color: #333;
+    font-family: "Courier New", monospace;
+}
+
+input[type="file"] {
+    margin-top: 10px;
+}
+
+/* Stijl voor de tekst die opgeslagen dagboekberichten toont */
+#savedDiary p {
+    font-size: 18px;
+    line-height: 1.6;
+    font-family: "Courier New", monospace;
+    color: #ffb3c6;
+    margin-bottom: 15px;
+}
+
+/* Stijl voor de afbeelding weergave (media content) */
+#mediaContent img {
+    margin: 10px;
+    border: 2px solid #ff4d6d;
+    border-radius: 10px;
+}
+
+/* Knoppen voor de categorieën in foto’s en video’s */
+button {
+    margin: 5px;
+    background-color: #ff4d6d;
+    border: 2px solid white;
+    font-size: 16px;
+    padding: 10px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #ff1e45;
+}
